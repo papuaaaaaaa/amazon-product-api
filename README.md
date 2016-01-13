@@ -31,9 +31,9 @@ amazon = require('amazon-product-api');
 Create client
 ```javascript
 var client = amazon.createClient({
-  awsId: "aws ID",
-  awsSecret: "aws Secret",
-  awsTag: "aws Tag"
+  accessKeyId: "Your ID",
+  secretAccessKey: "Your Key",
+  associateTag: "Your Tag"
 });
 ```
 
@@ -113,9 +113,9 @@ app.use(router(app));
 
 
 var client = amazon.createClient({
-  awsTag: process.env.AWS_TAG,
-  awsId: process.env.AWS_ID,
-  awsSecret: process.env.AWS_SECRET
+  associateTag: process.env.ASSOCIATE_TAG,
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  secretAccessKey: process.env.SECRET_ACCESS_KEY
 });
 
 

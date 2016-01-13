@@ -4,9 +4,9 @@ formatQueryParams = require('../lib/utils').formatQueryParams
 urlRegex = require './regex-weburl'
 
 credentials =
-  awsTag: process.env.AWS_TAG
-  awsId: process.env.AWS_ID
-  awsSecret: process.env.AWS_SECRET
+  associateTag: process.env.ASSOCIATE_TAG
+  accessKeyId: process.env.ACCESS_KEY_ID
+  secretAccessKey: process.env.SECRET_ACCESS_KEY
 
 
 describe 'formatQueryParams(query, method, credentials)', ->
@@ -120,7 +120,7 @@ describe 'client.itemSearch(query, cb)', ->
 
 
   describe 'when credentials are invalid', ->
-    client = amazonProductApi.createClient awsTag: 'sfsadf', awsId: 'sfadf', awsSecret: 'fsg'
+    client = amazonProductApi.createClient associateTag: 'sfsadf', accessKeyId: 'sfadf', secretAccessKey: 'fsg'
 
     describe 'when no callback is passed', ->
       it 'should return an error', ->
@@ -167,7 +167,7 @@ describe 'client.itemLookup(query, cb)', ->
 
 
   describe 'when credentials are invalid', ->
-    client = amazonProductApi.createClient awsTag: 'sfsadf', awsId: 'sfadf', awsSecret: 'fsg'
+    client = amazonProductApi.createClient associateTag: 'sfsadf', accessKeyId: 'sfadf', secretAccessKey: 'fsg'
 
     describe 'when no callback is passed', ->
       it 'should return an error', ->
@@ -230,7 +230,7 @@ describe 'client.browseNodeLookup(query, cb)', ->
 
 
   describe 'when credentials are invalid', ->
-    client = amazonProductApi.createClient awsTag: 'sfsadf', awsId: 'sfadf', awsSecret: 'fsg'
+    client = amazonProductApi.createClient associateTag: 'sfsadf', accessKeyId: 'sfadf', secretAccessKey: 'fsg'
 
     describe 'when no callback is passed', ->
       it 'should return an error', ->
